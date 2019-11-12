@@ -1,6 +1,6 @@
 {
   const angle = document.createElement( 'img' )
-  angle.src='tagged/angle/3.jpg'
+  angle.src='tagged/angle/1.jpg'
 
   const crawl = document.createElement( 'img' )
   crawl.src='tagged/crawl/1.jpg'
@@ -93,7 +93,7 @@
   walk.src='tagged/walk/1.jpg'  
   
   
-  var index = 3;
+  var index = 1;
   duck = document.createElement( 'img' )
   duck.src='tagged/duck/' + index + '.jpg';
 
