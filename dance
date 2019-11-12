@@ -140,7 +140,7 @@ duck = "duck"nums:num* { display( duck , nums)}
 
 fall = "fall"nums:num* { display( fall , nums)}
 
-flatten = "faltten"nums:num* { display( flatten , nums)}
+flatten = "flatten"nums:num* { display( flatten , nums)}
 
 flick = "flick"nums:num* { display( flick , nums)}
 
