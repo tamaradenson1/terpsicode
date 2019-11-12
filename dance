@@ -21,7 +21,7 @@
   flatten.src='tagged/flatten/1.jpg'
   
    const flick = document.createElement( 'img' )
-  flcik.src='tagged/flick/1.jpg'
+  flick.src='tagged/flick/1.jpg'
   
    const fold = document.createElement( 'img' )
   fold.src='tagged/fold/1.jpg'  
