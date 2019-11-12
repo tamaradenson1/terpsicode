@@ -126,7 +126,7 @@ setInterval(displayImage,6000);
 
 }
 
-movement = (angle / crawl / crouch / downdog / duck / fall / flatten / flick / fold / forward / hunch / kneel / lengthen / lie_spiral / lift / lunge / lying_down / plank / plie / reach / relax / rise / roll / run / sit_cross / slide / spiral / stomachspiral / throw_back / updog / walk))  )+
+movement = (angle / crawl / crouch / downdog / duck / fall / flatten / flick / fold / forward / hunch / kneel / lengthen / lie_spiral / lift / lunge / lying_down / plank / plie / reach / relax / rise / roll / run / sit_cross / slide / spiral / stomachspiral / throw_back / updog / walk  )+
 
 angle = "angle"nums:num* { display( angle , nums)}
 
