@@ -128,15 +128,69 @@ setInterval(displayImage,6000);
 
 movement = (angle / crawl / crouch / downdog / duck / fall / flatten / flick / fold / forward / hunch / kneel / lengthen / lie_spiral / lift / lunge / lying_down / plank / plie / reach / relax / rise / roll / run / sit_cross / slide / spiral / stomachspiral / throw_back / updog / walk))  )+
 
+angle = "angle"nums:num* { display( angle , nums)}
+
+crawl = "crawl"nums:num* { display( crawl , nums)}
+
+crouch = "crouch"nums:num* { display( crouch , nums)}
+
+downdog = "downdog"nums:num* { display( downdog , nums)}
+
 duck = "duck"nums:num* { display( duck , nums)}
 
-walk = "walk"nums:num* { display( walk , nums )}
+fall = "fall"nums:num* { display( fall , nums)}
+
+flatten = "faltten"nums:num* { display( flatten , nums)}
+
+flick = "flick"nums:num* { display( flick , nums)}
+
+fold = "fold"nums:num* { display( fold , nums)}
+
+forward = "forward"nums:num* { display( forward , nums)}
+
+hunch = "hunch"nums:num* { display( hunch , nums)}
+
+kneel = "kneel"nums:num* { display( kneel , nums)}
+
+lengthen = "lengthen"nums:num* { display( lengthen , nums)}
+
+lie_spiral = "lie_spiral"nums:num* { display( lie_spiral , nums)}
+
+lift = "lift"nums:num* { display( lift , nums)}
+
+lunge = "lunge"nums:num* { display( lunge , nums)}
+
+lying_down = "lying_down"nums:num* { display( lying_down , nums)}
+
+plank = "plank"nums:num* { display( plank , nums)}
+
+plie = "plie"nums:num* { display( plie , nums)}
+
+reach = "reach"nums:num* { display( reach , nums)}
+
+relax = "relax"nums:num* { display( relax , nums)}
+
+rise = "rise"nums:num* { display( rise , nums)}
+
+roll = "roll"nums:num* { display( roll , nums)}
+
+run = "run"nums:num* { display( run , nums)}
+
+sit_cross = "sit_cross"nums:num* { display( sit_cross , nums)}
+
+slide = "slide"nums:num* { display( slide , nums)}
+
+spiral = "spiral"nums:num* { display( spiral , nums)}
 
 stomachspiral = "stomachspiral"nums:num* { display( stomachspiral , nums ) }
 
-fall = "fall"nums:num* { display (fall, nums) }
+throw_back = "throw_back"nums:num* { display( throw_back , nums)}
 
-flick = "flick"nums:num* { display (flick, nums) }
+updog = "updog"nums:num* { display( updog , nums)}
+
+walk = "walk"nums:num* { display( walk , nums )}
+
+
 
 rest = " "
 
