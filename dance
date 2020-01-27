@@ -1,200 +1,57 @@
 {
-  const angle = document.createElement( 'img' )
-  angle.src='tagged/angle/1.jpg'
+  var move = document.createElement('img')
 
-  const crawl = document.createElement( 'img' )
-  crawl.src='tagged/crawl/1.jpg'
+  var index = 0;
+  var nums = 0;
+  var folder = null;
 
-  const crouch = document.createElement( 'img' )
-  crouch.src='tagged/crouch/1.jpg'
+  function display(folder, nums, comp) {
 
- const downdog = document.createElement( 'img' )
-  downdog.src='tagged/downdog/1.jpg'
-  
-  const duck = document.createElement( 'img' )
-  duck.src='tagged/duck/1.jpg'
-  
-   const fall = document.createElement( 'img' )
-  fall.src='tagged/fall/1.jpg'
-  
-   const flatten = document.createElement( 'img' )
-  flatten.src='tagged/flatten/1.jpg'
-  
-   const flick = document.createElement( 'img' )
-  flick.src='tagged/flick/1.jpg'
-  
-   const fold = document.createElement( 'img' )
-  fold.src='tagged/fold/1.jpg'  
-  
-   const forward = document.createElement( 'img' )
-  forward.src='tagged/forward/1.jpg' 
-  
-   const hunch = document.createElement( 'img' )
-  hunch.src='tagged/hunch/1.jpg'
-  
-   const kneel = document.createElement( 'img' )
-  kneel.src='tagged/kneel/1.jpg'
-  
-   const lengthen = document.createElement( 'img' )
-  lengthen.src='tagged/lengthen/1.jpg'  
-  
-   const lie_spiral = document.createElement( 'img' )
-  lie_spiral.src='tagged/lie_sprial/1.jpg'  
-  
-   const lift = document.createElement( 'img' )
-  lift.src='tagged/lift/1.jpg'  
-  
-   const lunge = document.createElement( 'img' )
-  lunge.src='tagged/lunge/1.jpg'  
-  
-   const lying_down = document.createElement( 'img' )
-  lying_down.src='tagged/lying_down/1.jpg'  
-  
-   const plank = document.createElement( 'img' )
-  plank.src='tagged/plank/1.jpg'  
-  
-   const plie = document.createElement( 'img' )
-  plie.src='tagged/plie/1.jpg'  
-  
-   const reach = document.createElement( 'img' )
-  reach.src='tagged/reach/1.jpg'  
-  
-   const relax= document.createElement( 'img' )
-  relax.src='tagged/relax/1.jpg'  
-  
-   const rise = document.createElement( 'img' )
-  rise.src='tagged/rise/1.jpg'  
-  
-   const roll = document.createElement( 'img' )
-  roll.src='tagged/roll/1.jpg'  
-  
-   const run = document.createElement( 'img' )
-  run.src='tagged/run/1.jpg'  
-  
-   const sit_cross = document.createElement( 'img' )
-  sit_cross.src='tagged/sit_cross/1.jpg'  
-  
-   const slide = document.createElement( 'img' )
-  slide.src='tagged/slide/1.jpg'  
-  
-   const spiral = document.createElement( 'img' )
-  spiral.src='tagged/spiral/1.jpg' 
-  
- const stomachspiral = document.createElement( 'img' )
-  stomachspiral.src='tagged/stomachspiral/1.jpg'
-  
-   const throw_back = document.createElement( 'img' )
-  throw_back.src='tagged/throw_back/1.jpg'  
-  
-   const updog = document.createElement( 'img' )
-  updog.src='tagged/updog/1.jpg'  
-  
-   const walk = document.createElement( 'img' )
-  walk.src='tagged/walk/1.jpg'  
-  
-  
-  var index = 1;
-  duck = document.createElement( 'img' )
-  duck.src='tagged/duck/' + index + '.jpg';
+    if (nums == 0 || nums == null) nums = 2000;
+    else nums = nums * 1000;
 
+    // console.log("number is : " + nums)
+    // console.log("folder is : " + String(folder))
+    // console.log("comp is : " + String(comp))
+    // move.src = 'tagged/' + folder + '/1.jpg';
 
-const display = (img,n) => {
-//console.log(n)
-if (n = null) n = 2000;
-else n = n*10000;
+    setInterval(function(){displayImage(move, folder)}, nums);
 
-function displayImage() {
-    var image = document.querySelector( 'img' )
-        if( image === null ) {
-        document.body.appendChild( img )
-      }
-      else{
-        document.body.replaceChild( img, image)
-      }
-      index++
-      if (index > 10) index = 1;
-      //console.log("index " + index);
-    //  console.log("image: " + img + image);
-      walk.src='tagged/walk/' + index + '.jpg';
+  }
+
+  function displayImage(img, folder) {
+    console.log("displaying");
+    var image = document.querySelector('img')
+    // if (image == null) {
+    //   document.getElementById('picture').appendChild(img)
+    // } else {
+    //   document.getElementById('picture').replaceChild(img, image)
+    // }
+
+    document.getElementById('picture').appendChild(img);
+    index++;
+    console.log("index : " + index);
+    move.src = 'tagged/' + folder + '/' + index + '.jpg';
+/**
+if one then first image
+if all then all images in folder
+*/    
+    move.onerror = function(){
+      console.log("no more files in directory");
+      index = 1;
+      move.src = 'tagged/' + folder + '/' + index + '.jpg';
+    }
+  }
 }
 
+dance = call+
 
+call = folder:move+ _ nums:num* _ comp:choreo* { display(folder, nums, comp) }
 
-setInterval(displayImage,6000);
+choreo = ("palindrome")
 
-}
+move = ("walk"/"duck"/"angle"/"crawl"/"crouch"/"downdog"/"duck"/"fall"/"flatten"/"flick"/"fold"/"forward"/"hunch"/"kneel"/"lengthen"/"lie_spiral"/"lift"/"lunge"/"lying_down"/"plank"/"plie"/"reach"/"relax"/"rise"/"roll"/"run"/"sit_cross"/"slide"/"spiral"/"stomachspiral"/"throw_back"/"updog")
 
-}
+num = [0-9] { return parseInt(text(), 10); }
 
-movement = (angle / crawl / crouch / downdog / duck / fall / flatten / flick / fold / forward / hunch / kneel / lengthen / lie_spiral / lift / lunge / lying_down / plank / plie / reach / relax / rise / roll / run / sit_cross / slide / spiral / stomachspiral / throw_back / updog / walk  )+
-
-angle = "angle"nums:num* { display( angle , nums)}
-
-crawl = "crawl"nums:num* { display( crawl , nums)}
-
-crouch = "crouch"nums:num* { display( crouch , nums)}
-
-downdog = "downdog"nums:num* { display( downdog , nums)}
-
-duck = "duck"nums:num* { display( duck , nums)}
-
-fall = "fall"nums:num* { display( fall , nums)}
-
-flatten = "flatten"nums:num* { display( flatten , nums)}
-
-flick = "flick"nums:num* { display( flick , nums)}
-
-fold = "fold"nums:num* { display( fold , nums)}
-
-forward = "forward"nums:num* { display( forward , nums)}
-
-hunch = "hunch"nums:num* { display( hunch , nums)}
-
-kneel = "kneel"nums:num* { display( kneel , nums)}
-
-lengthen = "lengthen"nums:num* { display( lengthen , nums)}
-
-lie_spiral = "lie_spiral"nums:num* { display( lie_spiral , nums)}
-
-lift = "lift"nums:num* { display( lift , nums)}
-
-lunge = "lunge"nums:num* { display( lunge , nums)}
-
-lying_down = "lying_down"nums:num* { display( lying_down , nums)}
-
-plank = "plank"nums:num* { display( plank , nums)}
-
-plie = "plie"nums:num* { display( plie , nums)}
-
-reach = "reach"nums:num* { display( reach , nums)}
-
-relax = "relax"nums:num* { display( relax , nums)}
-
-rise = "rise"nums:num* { display( rise , nums)}
-
-roll = "roll"nums:num* { display( roll , nums)}
-
-run = "run"nums:num* { display( run , nums)}
-
-sit_cross = "sit_cross"nums:num* { display( sit_cross , nums)}
-
-slide = "slide"nums:num* { display( slide , nums)}
-
-spiral = "spiral"nums:num* { display( spiral , nums)}
-
-stomachspiral = "stomachspiral"nums:num* { display( stomachspiral , nums ) }
-
-throw_back = "throw_back"nums:num* { display( throw_back , nums)}
-
-updog = "updog"nums:num* { display( updog , nums)}
-
-walk = "walk"nums:num* { display( walk , nums )}
-
-
-
-rest = " "
-
-num = [0-9]
-
-_ "whitespace"
-  = [ \t\n\r]*
+_ "whitespace" = [\t\ n\ r] *

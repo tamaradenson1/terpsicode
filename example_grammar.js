@@ -141,30 +141,12 @@ function peg$parse(input, options) {
       peg$startRuleFunctions = { start: peg$parsestart },
       peg$startRuleFunction  = peg$parsestart,
 
-      peg$c0 = "[",
-      peg$c1 = peg$literalExpectation("[", false),
-      peg$c2 = "]",
-      peg$c3 = peg$literalExpectation("]", false),
-      peg$c4 = function(time) {
-      	var dur = 3;
-      	var results = [];
-      	return [results];
-        sleep(3000);
-      },
-      peg$c5 = " ",
-      peg$c6 = peg$literalExpectation(" ", false),
-      peg$c7 = function() { return []; },
-      peg$c8 = "duck",
-      peg$c9 = peg$literalExpectation("duck", false),
-      peg$c10 = function() {return tempImg;},
-      peg$c11 = "kneel",
-      peg$c12 = peg$literalExpectation("kneel", false),
-      peg$c13 = function() {return mArissa;},
-      peg$c14 = "walk",
-      peg$c15 = peg$literalExpectation("walk", false),
-      peg$c16 = function() {return walkImg;},
-      peg$c17 = /^[ \t\n\r]/,
-      peg$c18 = peg$classExpectation([" ", "\t", "\n", "\r"], false, false),
+      peg$c0 = "hello",
+      peg$c1 = peg$literalExpectation("hello", false),
+      peg$c2 = "bye",
+      peg$c3 = peg$literalExpectation("bye", false),
+      peg$c4 = " ",
+      peg$c5 = peg$literalExpectation(" ", false),
 
       peg$currPos          = 0,
       peg$savedPos         = 0,
@@ -303,53 +285,17 @@ function peg$parse(input, options) {
   }
 
   function peg$parsestart() {
-    var s0;
-
-    s0 = peg$parsetime();
-
-    return s0;
-  }
-
-  function peg$parsetime() {
-    var s0, s1, s2, s3, s4;
+    var s0, s1, s2, s3;
 
     s0 = peg$currPos;
-    if (input.charCodeAt(peg$currPos) === 91) {
-      s1 = peg$c0;
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c1); }
-    }
+    s1 = peg$parsehello();
     if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsemovement();
-      if (s3 !== peg$FAILED) {
-        while (s3 !== peg$FAILED) {
-          s2.push(s3);
-          s3 = peg$parsemovement();
-        }
-      } else {
-        s2 = peg$FAILED;
-      }
+      s2 = peg$parse_();
       if (s2 !== peg$FAILED) {
-        if (input.charCodeAt(peg$currPos) === 93) {
-          s3 = peg$c2;
-          peg$currPos++;
-        } else {
-          s3 = peg$FAILED;
-          if (peg$silentFails === 0) { peg$fail(peg$c3); }
-        }
+        s3 = peg$parsebye();
         if (s3 !== peg$FAILED) {
-          s4 = peg$parse_();
-          if (s4 !== peg$FAILED) {
-            peg$savedPos = s0;
-            s1 = peg$c4(s2);
-            s0 = s1;
-          } else {
-            peg$currPos = s0;
-            s0 = peg$FAILED;
-          }
+          s1 = [s1, s2, s3];
+          s0 = s1;
         } else {
           peg$currPos = s0;
           s0 = peg$FAILED;
@@ -366,158 +312,47 @@ function peg$parse(input, options) {
     return s0;
   }
 
-  function peg$parsemovement() {
+  function peg$parsehello() {
     var s0;
 
-    s0 = peg$parseduck();
-    if (s0 === peg$FAILED) {
-      s0 = peg$parsekneel();
-      if (s0 === peg$FAILED) {
-        s0 = peg$parsewalk();
-        if (s0 === peg$FAILED) {
-          s0 = peg$parserest();
-        }
-      }
-    }
-
-    return s0;
-  }
-
-  function peg$parserest() {
-    var s0, s1;
-
-    s0 = peg$currPos;
-    if (input.charCodeAt(peg$currPos) === 32) {
-      s1 = peg$c5;
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c6); }
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c7();
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parseduck() {
-    var s0, s1;
-
-    s0 = peg$currPos;
-    if (input.substr(peg$currPos, 4) === peg$c8) {
-      s1 = peg$c8;
-      peg$currPos += 4;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c9); }
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c10();
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parsekneel() {
-    var s0, s1;
-
-    s0 = peg$currPos;
-    if (input.substr(peg$currPos, 5) === peg$c11) {
-      s1 = peg$c11;
+    if (input.substr(peg$currPos, 5) === peg$c0) {
+      s0 = peg$c0;
       peg$currPos += 5;
     } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c12); }
+      s0 = peg$FAILED;
+      if (peg$silentFails === 0) { peg$fail(peg$c1); }
     }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c13();
-    }
-    s0 = s1;
 
     return s0;
   }
 
-  function peg$parsewalk() {
-    var s0, s1;
+  function peg$parsebye() {
+    var s0;
 
-    s0 = peg$currPos;
-    if (input.substr(peg$currPos, 4) === peg$c14) {
-      s1 = peg$c14;
-      peg$currPos += 4;
+    if (input.substr(peg$currPos, 3) === peg$c2) {
+      s0 = peg$c2;
+      peg$currPos += 3;
     } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c15); }
+      s0 = peg$FAILED;
+      if (peg$silentFails === 0) { peg$fail(peg$c3); }
     }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c16();
-    }
-    s0 = s1;
 
     return s0;
   }
 
   function peg$parse_() {
-    var s0, s1;
+    var s0;
 
-    s0 = [];
-    if (peg$c17.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
+    if (input.charCodeAt(peg$currPos) === 32) {
+      s0 = peg$c4;
       peg$currPos++;
     } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c18); }
-    }
-    while (s1 !== peg$FAILED) {
-      s0.push(s1);
-      if (peg$c17.test(input.charAt(peg$currPos))) {
-        s1 = input.charAt(peg$currPos);
-        peg$currPos++;
-      } else {
-        s1 = peg$FAILED;
-        if (peg$silentFails === 0) { peg$fail(peg$c18); }
-      }
+      s0 = peg$FAILED;
+      if (peg$silentFails === 0) { peg$fail(peg$c5); }
     }
 
     return s0;
   }
-
-
-  var index = 1;
-  var walkImg = new Image();
-  walkImg.onload = function(){
-     appendImage();
-  }
-
-  var tryLoadImage = function( index ){
-     walkImg.src = 'tagged/walk/' + index + '.jpg';
-     sleep(3000);
-  }
-  var appendImage = function(){
-     var pic = document.createElement('img');
-     pic.src = walkImg.src;
-     if (document.body.getElementsByTagName('img').length > 0) {
-       document.body.replaceChild(pic, document.body.getElementsByTagName('img')[0])
-     }
-     else document.body.appendChild( pic )
-     if ( index > 10) index = 1;
-     //tryLoadImage( index++ )
-     setTimeout(tryLoadImage( index++ ), 3000)
-  }
-  setTimeout(tryLoadImage( index ), 3000);
-
-
-
-  { var mArissa = document.createElement("img");
-  mArissa.src ='tagged/kneel/5.jpg';}
-
-
 
   peg$result = peg$startRuleFunction();
 
