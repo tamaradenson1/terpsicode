@@ -10,12 +10,13 @@
     input[type=text] {
       width: 98%;
       border: none;
-      background-color: #e0e0e0;
-      color: #242424;
+      background-color: #242424;
+      color: #e0e0e0;
       position:absolute;
       bottom: 3px;
       position:fixed;
       font-family: courier;
+      font-size:18px;
     }
     body {
       font-family: courier;
@@ -28,17 +29,18 @@
       position: relative;
       bottom: 15px;
     }
-    #picture {
+    .poses {
       top: 3px;
-      height: 250px;
+      height: 100%;
       position: sticky;
+      object-fit: contain;
     }
   </style>
 
 </head>
 
 <body>
-  <div id="picture" align="center"></div>
+  <div id="picture" class="poses" align="center"></div>
 
   <div>
     <input type="text"
