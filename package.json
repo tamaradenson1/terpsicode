@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "electron": "^7.1.10"
+    "electron": "^7.2.4"
   },
   "devDependencies": {},
   "scripts": {
