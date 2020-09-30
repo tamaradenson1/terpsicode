@@ -73,8 +73,8 @@ choreo = ("palindrome")
 
 pre = ("one"/"all")
 
-move = ("walk"/"duck"/"angle"/"crawl"/"crouch"/"downdog"/"duck"/"fall"/"flatten"/"flick"/"fold"/"forward"/"hunch"/"kneel"/"lengthen"/"lie_spiral"/"lift"/"lunge"/"lying_down"/"plank"/"plie"/"reach"/"relax"/"rise"/"roll"/"run"/"sit_cross"/"slide"/"spiral"/"stomachspiral"/"throw_back"/"updog"/"inversion"/"jump"/"lie"/"plank"/"pose"/"prepare"/"Reach"/"run"/"stand"/"throw"/"tuck"/"twist"/"hands_hips"/"reach_lean"/"handstand"/)
-duet = ("kneel_plank"/"reach"/"standing"/"bending"/"crouch"/"forward_lunge"/)
+move = ("walk"/"duck"/"angle"/"crawl"/"crouch"/"downdog"/"duck"/"fall"/"flatten"/"flick"/"fold"/"forward"/"hunch"/"kneel"/"lengthen"/"lie_spiral"/"lift"/"lunge"/"lying_down"/"plank"/"plie"/"reach"/"relax"/"rise"/"roll"/"run"/"sit_cross"/"slide"/"spiral"/"stomachspiral"/"throw_back"/"updog"/"inversion"/"jump"/"lie"/"plank"/"pose"/"prepare"/"Reach"/"run"/"stand"/"throw"/"tuck"/"twist"/"handstand"/)
+duet = ("reach"/"standing"/"bending"/"crouch"/)
 num = [0-9] { return parseInt(text(), 10); }
 
 _ "whitespace" = [\t\ n\ r] *
